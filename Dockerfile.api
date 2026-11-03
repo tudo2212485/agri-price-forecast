@@ -1,0 +1,37 @@
+# ==============================================================================
+# Stage 1: Build React SPA Frontend
+# ==============================================================================
+FROM node:20-alpine AS frontend-builder
+WORKDIR /ui
+COPY ui/package*.json ./
+RUN npm install
+COPY ui/ ./
+RUN npm run build
+
+# ==============================================================================
+# Stage 2: Python FastAPI Backend Service
+# ==============================================================================
+FROM python:3.11-slim
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    TZ=Asia/Ho_Chi_Minh
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Sao chép bản build tĩnh SPA từ Stage 1 để cổng 8000 phục vụ trọn vẹn cả API lẫn UI
+COPY --from=frontend-builder /ui/dist /app/ui/dist
+
+EXPOSE 8000
+
+CMD ["sh", "-c", "python scripts/init_db.py && uvicorn api.main:app --host 0.0.0.0 --port 8000"]

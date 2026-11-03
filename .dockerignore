@@ -1,0 +1,23 @@
+# Git & System
+.git
+.gitignore
+
+# Python cache & virtual environments
+__pycache__
+*.py[cod]
+*$py.class
+.venv
+venv
+env
+.pytest_cache
+
+# Node & UI dependencies (Built inside Docker Stage 1)
+ui/node_modules
+ui/.cache
+
+# Logs & Database volumes
+timescaledb_data
+data/*.db
+data/*.sqlite3
+logs/*.log
+

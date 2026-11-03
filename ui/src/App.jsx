@@ -452,7 +452,7 @@ export default function App() {
       <footer className="bg-slate-900 text-slate-200 border-t border-slate-800 py-5 px-4 mt-10">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4 text-sm">
           <div>
-            <strong>Đồ án Tốt nghiệp (SRS v1.1):</strong> Ứng dụng phân tích dữ liệu và dự báo biến
+            <strong>Đồ án Tốt nghiệp:</strong> Ứng dụng phân tích dữ liệu và dự báo biến
             động giá nông sản theo chuỗi thời gian sử dụng Học máy
           </div>
           <div>

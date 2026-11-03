@@ -368,11 +368,10 @@ export default function FarmerModeView({
                 type="button"
                 onClick={() => setCurrentStep(item.step)}
                 aria-current={isCurrentStep ? 'step' : undefined}
-                className={`touch-target-btn min-h-[48px] px-2.5 sm:px-3 py-2 rounded-[12px] font-extrabold text-[15px] sm:text-base leading-tight text-center transition ${
-                  isCurrentStep
+                className={`touch-target-btn min-h-[48px] px-2.5 sm:px-3 py-2 rounded-[12px] font-extrabold text-[15px] sm:text-base leading-tight text-center transition ${isCurrentStep
                     ? 'bg-[#ECFDF5] text-[#14532D] border-[3px] border-[#14532D] shadow-sm'
                     : 'bg-slate-100 text-[#334155] border-2 border-slate-300 hover:bg-slate-200'
-                }`}
+                  }`}
               >
                 {isCurrentStep ? `✓ ${item.title}` : item.title}
               </button>
@@ -423,11 +422,10 @@ export default function FarmerModeView({
                   type="button"
                   onClick={() => onSelectCommodity(comm.code)}
                   aria-pressed={isSelected}
-                  className={`touch-target-btn w-full p-4 sm:p-5 rounded-[12px] text-left transition flex flex-col gap-3 ${
-                    isSelected
+                  className={`touch-target-btn w-full p-4 sm:p-5 rounded-[12px] text-left transition flex flex-col gap-3 ${isSelected
                       ? 'elderly-card-selected shadow-md'
                       : 'bg-white text-[#14171A] border-2 border-slate-300 hover:border-[#14532D] hover:bg-emerald-50/40'
-                  }`}
+                    }`}
                 >
                   {/* Hàng trên: Hình minh họa SVG + Tên đầy đủ + Huy hiệu ✓ Đang chọn */}
                   <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2.5 w-full">
@@ -446,11 +444,10 @@ export default function FarmerModeView({
                     </div>
 
                     <span
-                      className={`shrink-0 px-3 py-1 rounded-[12px] text-base font-extrabold border-2 ${
-                        isSelected
+                      className={`shrink-0 px-3 py-1 rounded-[12px] text-base font-extrabold border-2 ${isSelected
                           ? 'bg-[#14532D] text-white border-[#0F3F22]'
                           : 'bg-slate-100 text-[#14171A] border-slate-300'
-                      }`}
+                        }`}
                     >
                       {isSelected ? '✓ Đang chọn' : 'Chọn'}
                     </span>
@@ -477,7 +474,7 @@ export default function FarmerModeView({
                         {changePct > 0 ? '+' : ''}
                         {String(changePct).replace('.', ',')}%
                         {forecast7dPrice
-                          ? ` (~${formatVnd(forecast7dPrice)} đ/kg)`
+                          ? ` (~${formatVnd(Math.round(Number(forecast7dPrice) / 100) * 100)} đ/kg)`
                           : ''}
                       </div>
                     </div>
@@ -539,11 +536,10 @@ export default function FarmerModeView({
                     type="button"
                     onClick={() => onSelectProvince(prov.code)}
                     aria-pressed={isSelected}
-                    className={`touch-target-btn min-h-[54px] w-full px-4 sm:px-5 py-3 rounded-[12px] font-extrabold text-xl text-left transition flex items-center justify-between gap-3 ${
-                      isSelected
+                    className={`touch-target-btn min-h-[54px] w-full px-4 sm:px-5 py-3 rounded-[12px] font-extrabold text-xl text-left transition flex items-center justify-between gap-3 ${isSelected
                         ? 'elderly-card-selected text-[#14532D] shadow-sm'
                         : 'bg-slate-50 text-[#14171A] border-2 border-slate-300 hover:border-[#14532D] hover:bg-emerald-50/40'
-                    }`}
+                      }`}
                   >
                     <div>
                       <span>📍 {displayInfo.primaryName}</span>
@@ -554,11 +550,10 @@ export default function FarmerModeView({
                       )}
                     </div>
                     <span
-                      className={`px-3.5 py-1 rounded-[12px] text-base font-extrabold border-2 ${
-                        isSelected
+                      className={`px-3.5 py-1 rounded-[12px] text-base font-extrabold border-2 ${isSelected
                           ? 'bg-[#14532D] text-white border-[#0F3F22]'
                           : 'bg-white text-[#334155] border-slate-300'
-                      }`}
+                        }`}
                     >
                       {isSelected ? '✓ Đang chọn' : 'Chọn'}
                     </span>
@@ -586,11 +581,10 @@ export default function FarmerModeView({
                     type="button"
                     onClick={() => onSelectHorizon(opt.days)}
                     aria-pressed={active}
-                    className={`touch-target-btn min-h-[52px] px-4 py-3 rounded-[12px] font-extrabold text-xl transition ${
-                      active
+                    className={`touch-target-btn min-h-[52px] px-4 py-3 rounded-[12px] font-extrabold text-xl transition ${active
                         ? 'elderly-card-selected text-[#14532D] shadow-sm'
                         : 'bg-slate-50 text-[#14171A] border-2 border-slate-300 hover:border-[#14532D]'
-                    }`}
+                      }`}
                   >
                     {active ? `✓ ${opt.label}` : opt.label}
                   </button>
@@ -737,7 +731,7 @@ export default function FarmerModeView({
                     </div>
                     <div className="flex items-baseline gap-2 flex-wrap">
                       <span className="text-[36px] sm:text-[40px] font-extrabold text-[#14532D] leading-none">
-                        {formatVnd(farmerSummary.target_price)}
+                        {formatVnd(Math.round(Number(farmerSummary.target_price) / 100) * 100)}
                       </span>
                       <span className="text-2xl font-bold text-[#14532D]">đồng/kg</span>
                     </div>
@@ -745,7 +739,7 @@ export default function FarmerModeView({
                       Chênh lệch dự kiến:{' '}
                       <span className="text-[#14532D]">
                         {farmerSummary.change_amount > 0 ? '+' : ''}
-                        {formatVnd(farmerSummary.change_amount)} đồng/kg (
+                        {formatVnd(Math.round(Number(farmerSummary.change_amount) / 100) * 100)} đồng/kg (
                         {farmerSummary.change_pct > 0 ? '+' : ''}
                         {String(farmerSummary.change_pct).replace('.', ',')}%)
                       </span>
@@ -804,7 +798,7 @@ export default function FarmerModeView({
                 </div>
 
                 {/* (6) Biểu đồ đơn giản hóa */}
-                <div className="bg-slate-50 p-3 sm:p-5 rounded-[12px] border-2 border-slate-300 space-y-3">
+                <div className="bg-slate-50 p-4 sm:p-5 rounded-[12px] border-2 border-slate-300 space-y-3">
                   <h3 className="text-[22px] font-extrabold text-[#14171A]">
                     📈 Biểu đồ giá những ngày qua và dự báo sắp tới
                   </h3>
@@ -912,11 +906,10 @@ export default function FarmerModeView({
                       setSubErrorMsg('');
                     }}
                     aria-pressed={subChannel === 'EMAIL'}
-                    className={`touch-target-btn min-h-[52px] px-4 py-2.5 rounded-[12px] font-extrabold text-lg transition ${
-                      subChannel === 'EMAIL'
+                    className={`touch-target-btn min-h-[52px] px-4 py-2.5 rounded-[12px] font-extrabold text-lg transition ${subChannel === 'EMAIL'
                         ? 'bg-[#14532D] text-white border-[3px] border-[#0F3F22]'
                         : 'bg-white text-[#14171A] border-2 border-slate-400'
-                    }`}
+                      }`}
                   >
                     {subChannel === 'EMAIL' ? '✓ ' : ''}📧 Nhận qua Email
                   </button>
@@ -927,11 +920,10 @@ export default function FarmerModeView({
                       setSubErrorMsg('');
                     }}
                     aria-pressed={subChannel === 'SMS_ZALO'}
-                    className={`touch-target-btn min-h-[52px] px-4 py-2.5 rounded-[12px] font-extrabold text-lg transition ${
-                      subChannel === 'SMS_ZALO'
+                    className={`touch-target-btn min-h-[52px] px-4 py-2.5 rounded-[12px] font-extrabold text-lg transition ${subChannel === 'SMS_ZALO'
                         ? 'bg-[#14532D] text-white border-[3px] border-[#0F3F22]'
                         : 'bg-white text-[#14171A] border-2 border-slate-400'
-                    }`}
+                      }`}
                   >
                     {subChannel === 'SMS_ZALO' ? '✓ ' : ''}📱 Nhận qua Tin nhắn / Zalo
                   </button>

@@ -1,0 +1,3475 @@
+{
+  "generated_at": "2026-11-03 10:41:03.572055+07:00",
+  "total_series_trained": 11,
+  "future_forecasts_generated": 330,
+  "backtest_forecasts_generated": 330,
+  "series_evaluations": [
+    {
+      "commodity_id": 1,
+      "commodity_code": "CAFE_ROBUSTA",
+      "commodity_name": "Cà phê nhân xô (Robusta)",
+      "province_id": 1,
+      "province_code": "LD",
+      "province_name": "Lâm Đồng",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 160,
+      "selected_model_type": "XGBOOST",
+      "selected_mape": 0.4411,
+      "selected_rmse": 635.1528,
+      "selected_mae": 520.1117,
+      "models": [
+        {
+          "model_run_id": 155,
+          "model_type": "NAIVE",
+          "mae": 1372.5641,
+          "rmse": 1944.7694,
+          "mape": 1.1776,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 230.7692,
+              "rmse": 323.443,
+              "mape": 0.1931
+            },
+            "h_7": {
+              "mae": 576.9231,
+              "rmse": 959.5672,
+              "mape": 0.4912
+            },
+            "h_14": {
+              "mae": 1207.6923,
+              "rmse": 1704.0675,
+              "mape": 1.0331
+            },
+            "h_30": {
+              "mae": 2615.3846,
+              "rmse": 3079.2107,
+              "mape": 2.258
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1261.2821,
+            "p90_abs_pct_error": 3.209,
+            "harvest_season_mape": 2.5308,
+            "off_harvest_season_mape": 0.5976,
+            "high_volatility_mape": 2.7235,
+            "normal_volatility_mape": 1.0487
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 156,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1764.8718,
+          "rmse": 2348.895,
+          "mape": 1.5154,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 823.0769,
+              "rmse": 1247.459,
+              "mape": 0.6984
+            },
+            "h_7": {
+              "mae": 1030.7692,
+              "rmse": 1482.2021,
+              "mape": 0.8796
+            },
+            "h_14": {
+              "mae": 1207.6923,
+              "rmse": 1704.0675,
+              "mape": 1.0331
+            },
+            "h_30": {
+              "mae": 3023.0769,
+              "rmse": 3602.67,
+              "mape": 2.6171
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1591.0256,
+            "p90_abs_pct_error": 3.7229,
+            "harvest_season_mape": 3.3658,
+            "off_harvest_season_mape": 0.7224,
+            "high_volatility_mape": 3.4332,
+            "normal_volatility_mape": 1.3556
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 157,
+          "model_type": "MOVING_AVG",
+          "mae": 1701.8309,
+          "rmse": 2311.4927,
+          "mape": 1.4631,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 598.9015,
+              "rmse": 866.7274,
+              "mape": 0.5076
+            },
+            "h_7": {
+              "mae": 917.5831,
+              "rmse": 1399.2565,
+              "mape": 0.7844
+            },
+            "h_14": {
+              "mae": 1534.0646,
+              "rmse": 2058.2735,
+              "mape": 1.3155
+            },
+            "h_30": {
+              "mae": 2932.9662,
+              "rmse": 3428.7415,
+              "mape": 2.5366
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1581.0621,
+            "p90_abs_pct_error": 3.7108,
+            "harvest_season_mape": 3.3743,
+            "off_harvest_season_mape": 0.644,
+            "high_volatility_mape": 3.3425,
+            "normal_volatility_mape": 1.3065
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 158,
+          "model_type": "PROPHET",
+          "mae": 949.0449,
+          "rmse": 1249.995,
+          "mape": 0.811,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 233.7054,
+              "rmse": 318.8726,
+              "mape": 0.1957
+            },
+            "h_7": {
+              "mae": 455.1577,
+              "rmse": 669.8675,
+              "mape": 0.3864
+            },
+            "h_14": {
+              "mae": 871.1177,
+              "rmse": 1109.4015,
+              "mape": 0.7434
+            },
+            "h_30": {
+              "mae": 1654.9254,
+              "rmse": 1952.1176,
+              "mape": 1.4245
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -727.1324,
+            "p90_abs_pct_error": 1.8975,
+            "harvest_season_mape": 1.4872,
+            "off_harvest_season_mape": 0.5212,
+            "high_volatility_mape": 1.7164,
+            "normal_volatility_mape": 0.7355
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 159,
+          "model_type": "RANDOM_FOREST",
+          "mae": 544.5898,
+          "rmse": 665.359,
+          "mape": 0.4615,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 273.8846,
+              "rmse": 360.9794,
+              "mape": 0.2302
+            },
+            "h_7": {
+              "mae": 523.7877,
+              "rmse": 620.4235,
+              "mape": 0.4414
+            },
+            "h_14": {
+              "mae": 615.8738,
+              "rmse": 740.0468,
+              "mape": 0.5195
+            },
+            "h_30": {
+              "mae": 596.3392,
+              "rmse": 683.0789,
+              "mape": 0.5121
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -45.6352,
+            "p90_abs_pct_error": 0.9476,
+            "harvest_season_mape": 0.5222,
+            "off_harvest_season_mape": 0.4355,
+            "high_volatility_mape": 0.4089,
+            "normal_volatility_mape": 0.4659
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 160,
+          "model_type": "XGBOOST",
+          "mae": 520.1117,
+          "rmse": 635.1528,
+          "mape": 0.4411,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 330.9992,
+              "rmse": 408.9035,
+              "mape": 0.2778
+            },
+            "h_7": {
+              "mae": 449.0508,
+              "rmse": 517.1319,
+              "mape": 0.3791
+            },
+            "h_14": {
+              "mae": 528.0277,
+              "rmse": 680.1382,
+              "mape": 0.4465
+            },
+            "h_30": {
+              "mae": 632.56,
+              "rmse": 785.8914,
+              "mape": 0.5454
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -59.4118,
+            "p90_abs_pct_error": 0.8554,
+            "harvest_season_mape": 0.4896,
+            "off_harvest_season_mape": 0.4204,
+            "high_volatility_mape": 0.3034,
+            "normal_volatility_mape": 0.4526
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_XGBOOST.pkl",
+          "is_selected": true
+        },
+        {
+          "model_run_id": 161,
+          "model_type": "LSTM",
+          "mae": 523.1027,
+          "rmse": 677.1292,
+          "mape": 0.4446,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 197.9562,
+              "rmse": 275.3874,
+              "mape": 0.1656
+            },
+            "h_7": {
+              "mae": 414.01,
+              "rmse": 637.8389,
+              "mape": 0.3503
+            },
+            "h_14": {
+              "mae": 787.3508,
+              "rmse": 892.7998,
+              "mape": 0.6693
+            },
+            "h_30": {
+              "mae": 543.4831,
+              "rmse": 770.1487,
+              "mape": 0.4656
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 63.7135,
+            "p90_abs_pct_error": 0.9404,
+            "harvest_season_mape": 0.6526,
+            "off_harvest_season_mape": 0.3555,
+            "high_volatility_mape": 0.9334,
+            "normal_volatility_mape": 0.4039
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_LD_LSTM.pkl",
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "commodity_id": 1,
+      "commodity_code": "CAFE_ROBUSTA",
+      "commodity_name": "Cà phê nhân xô (Robusta)",
+      "province_id": 2,
+      "province_code": "DL",
+      "province_name": "Đắk Lắk",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1295,
+      "selected_model_run_id": 167,
+      "selected_model_type": "XGBOOST",
+      "selected_mape": 0.5794,
+      "selected_rmse": 858.2798,
+      "selected_mae": 686.9707,
+      "models": [
+        {
+          "model_run_id": 162,
+          "model_type": "NAIVE",
+          "mae": 1187.4359,
+          "rmse": 1505.0939,
+          "mape": 1.0057,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 123.0769,
+              "rmse": 192.1538,
+              "mape": 0.1023
+            },
+            "h_7": {
+              "mae": 561.5385,
+              "rmse": 649.8521,
+              "mape": 0.4702
+            },
+            "h_14": {
+              "mae": 1030.7692,
+              "rmse": 1199.3588,
+              "mape": 0.8681
+            },
+            "h_30": {
+              "mae": 2438.4615,
+              "rmse": 2603.991,
+              "mape": 2.0822
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1084.8718,
+            "p90_abs_pct_error": 2.2628,
+            "harvest_season_mape": 1.3194,
+            "off_harvest_season_mape": 0.8713,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0057
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 163,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1560.0,
+          "rmse": 1903.7211,
+          "mape": 1.3222,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 823.0769,
+              "rmse": 1074.5303,
+              "mape": 0.6915
+            },
+            "h_7": {
+              "mae": 876.9231,
+              "rmse": 1103.8395,
+              "mape": 0.7378
+            },
+            "h_14": {
+              "mae": 1030.7692,
+              "rmse": 1199.3588,
+              "mape": 0.8681
+            },
+            "h_30": {
+              "mae": 3053.8462,
+              "rmse": 3313.2601,
+              "mape": 2.6126
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1485.1282,
+            "p90_abs_pct_error": 2.6198,
+            "harvest_season_mape": 1.827,
+            "off_harvest_season_mape": 1.1059,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.3222
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 164,
+          "model_type": "MOVING_AVG",
+          "mae": 1509.853,
+          "rmse": 1860.1747,
+          "mape": 1.2806,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 439.56,
+              "rmse": 579.4548,
+              "mape": 0.3691
+            },
+            "h_7": {
+              "mae": 862.6369,
+              "rmse": 1062.419,
+              "mape": 0.726
+            },
+            "h_14": {
+              "mae": 1346.1538,
+              "rmse": 1576.7014,
+              "mape": 1.1369
+            },
+            "h_30": {
+              "mae": 2818.68,
+              "rmse": 2984.271,
+              "mape": 2.4083
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1465.0903,
+            "p90_abs_pct_error": 2.5039,
+            "harvest_season_mape": 1.8479,
+            "off_harvest_season_mape": 1.0374,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.2806
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 165,
+          "model_type": "PROPHET",
+          "mae": 809.0283,
+          "rmse": 1089.3527,
+          "mape": 0.6826,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 134.0069,
+              "rmse": 194.2646,
+              "mape": 0.1114
+            },
+            "h_7": {
+              "mae": 456.3815,
+              "rmse": 529.3777,
+              "mape": 0.3806
+            },
+            "h_14": {
+              "mae": 711.2477,
+              "rmse": 950.7703,
+              "mape": 0.5963
+            },
+            "h_30": {
+              "mae": 1472.8092,
+              "rmse": 1704.3677,
+              "mape": 1.2538
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -557.0864,
+            "p90_abs_pct_error": 1.6152,
+            "harvest_season_mape": 0.5227,
+            "off_harvest_season_mape": 0.7511,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6826
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 166,
+          "model_type": "RANDOM_FOREST",
+          "mae": 764.7859,
+          "rmse": 944.7436,
+          "mape": 0.6454,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 204.3146,
+              "rmse": 228.9806,
+              "mape": 0.1707
+            },
+            "h_7": {
+              "mae": 431.96,
+              "rmse": 490.0007,
+              "mape": 0.3606
+            },
+            "h_14": {
+              "mae": 840.0223,
+              "rmse": 940.5542,
+              "mape": 0.707
+            },
+            "h_30": {
+              "mae": 1276.3438,
+              "rmse": 1332.8902,
+              "mape": 1.0846
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -133.2986,
+            "p90_abs_pct_error": 1.3262,
+            "harvest_season_mape": 0.756,
+            "off_harvest_season_mape": 0.5981,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6454
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 167,
+          "model_type": "XGBOOST",
+          "mae": 686.9707,
+          "rmse": 858.2798,
+          "mape": 0.5794,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 260.5769,
+              "rmse": 295.6472,
+              "mape": 0.2181
+            },
+            "h_7": {
+              "mae": 396.36,
+              "rmse": 502.1291,
+              "mape": 0.3314
+            },
+            "h_14": {
+              "mae": 660.7754,
+              "rmse": 815.4511,
+              "mape": 0.5564
+            },
+            "h_30": {
+              "mae": 1085.0262,
+              "rmse": 1231.5227,
+              "mape": 0.9195
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -42.6095,
+            "p90_abs_pct_error": 1.2137,
+            "harvest_season_mape": 0.6996,
+            "off_harvest_season_mape": 0.5278,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.5794
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_XGBOOST.pkl",
+          "is_selected": true
+        },
+        {
+          "model_run_id": 168,
+          "model_type": "LSTM",
+          "mae": 837.9054,
+          "rmse": 1071.3495,
+          "mape": 0.7032,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 168.6085,
+              "rmse": 213.691,
+              "mape": 0.1403
+            },
+            "h_7": {
+              "mae": 404.0077,
+              "rmse": 554.0345,
+              "mape": 0.3362
+            },
+            "h_14": {
+              "mae": 962.9777,
+              "rmse": 1088.1999,
+              "mape": 0.8049
+            },
+            "h_30": {
+              "mae": 1190.9669,
+              "rmse": 1383.7604,
+              "mape": 1.0079
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 770.1429,
+            "p90_abs_pct_error": 1.5731,
+            "harvest_season_mape": 0.8093,
+            "off_harvest_season_mape": 0.6578,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7032
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DL_LSTM.pkl",
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "commodity_id": 1,
+      "commodity_code": "CAFE_ROBUSTA",
+      "commodity_name": "Cà phê nhân xô (Robusta)",
+      "province_id": 3,
+      "province_code": "GL",
+      "province_name": "Gia Lai",
+      "train_start_date": "2023-01-02",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1295,
+      "selected_model_run_id": 174,
+      "selected_model_type": "XGBOOST",
+      "selected_mape": 0.6662,
+      "selected_rmse": 982.3391,
+      "selected_mae": 792.4893,
+      "models": [
+        {
+          "model_run_id": 169,
+          "model_type": "NAIVE",
+          "mae": 1288.4615,
+          "rmse": 1656.1231,
+          "mape": 1.0952,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 176.9231,
+              "rmse": 236.968,
+              "mape": 0.148
+            },
+            "h_7": {
+              "mae": 676.9231,
+              "rmse": 842.1584,
+              "mape": 0.5697
+            },
+            "h_14": {
+              "mae": 1146.1538,
+              "rmse": 1288.7084,
+              "mape": 0.9691
+            },
+            "h_30": {
+              "mae": 2469.2308,
+              "rmse": 2737.9105,
+              "mape": 2.1142
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1189.4872,
+            "p90_abs_pct_error": 2.4914,
+            "harvest_season_mape": 1.9802,
+            "off_harvest_season_mape": 0.7159,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0952
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 170,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1670.0,
+          "rmse": 2026.7632,
+          "mape": 1.4183,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 869.2308,
+              "rmse": 998.0751,
+              "mape": 0.7274
+            },
+            "h_7": {
+              "mae": 1046.1538,
+              "rmse": 1210.8484,
+              "mape": 0.8809
+            },
+            "h_14": {
+              "mae": 1146.1538,
+              "rmse": 1288.7084,
+              "mape": 0.9691
+            },
+            "h_30": {
+              "mae": 3130.7692,
+              "rmse": 3499.5604,
+              "mape": 2.6838
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1417.1795,
+            "p90_abs_pct_error": 2.8838,
+            "harvest_season_mape": 2.5472,
+            "off_harvest_season_mape": 0.9345,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.4183
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 171,
+          "model_type": "MOVING_AVG",
+          "mae": 1611.1003,
+          "rmse": 1995.5865,
+          "mape": 1.3696,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 546.1546,
+              "rmse": 629.2095,
+              "mape": 0.457
+            },
+            "h_7": {
+              "mae": 969.2315,
+              "rmse": 1143.7233,
+              "mape": 0.817
+            },
+            "h_14": {
+              "mae": 1502.1992,
+              "rmse": 1727.9142,
+              "mape": 1.2715
+            },
+            "h_30": {
+              "mae": 2747.2546,
+              "rmse": 3095.2781,
+              "mape": 2.3553
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1408.1695,
+            "p90_abs_pct_error": 2.9229,
+            "harvest_season_mape": 2.5215,
+            "off_harvest_season_mape": 0.876,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.3696
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 172,
+          "model_type": "PROPHET",
+          "mae": 813.5982,
+          "rmse": 1032.8586,
+          "mape": 0.6891,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 191.9377,
+              "rmse": 246.7019,
+              "mape": 0.1605
+            },
+            "h_7": {
+              "mae": 554.1892,
+              "rmse": 710.8468,
+              "mape": 0.4658
+            },
+            "h_14": {
+              "mae": 667.7238,
+              "rmse": 782.2985,
+              "mape": 0.5624
+            },
+            "h_30": {
+              "mae": 1491.3469,
+              "rmse": 1667.2861,
+              "mape": 1.2743
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -684.8825,
+            "p90_abs_pct_error": 1.5219,
+            "harvest_season_mape": 0.9467,
+            "off_harvest_season_mape": 0.5787,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6891
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 173,
+          "model_type": "RANDOM_FOREST",
+          "mae": 1009.2676,
+          "rmse": 1174.8261,
+          "mape": 0.8495,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 361.1377,
+              "rmse": 434.6298,
+              "mape": 0.3011
+            },
+            "h_7": {
+              "mae": 757.11,
+              "rmse": 862.7032,
+              "mape": 0.6326
+            },
+            "h_14": {
+              "mae": 1052.8,
+              "rmse": 1143.6011,
+              "mape": 0.8824
+            },
+            "h_30": {
+              "mae": 1269.3638,
+              "rmse": 1503.6695,
+              "mape": 1.079
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -105.3557,
+            "p90_abs_pct_error": 1.5157,
+            "harvest_season_mape": 0.9216,
+            "off_harvest_season_mape": 0.8185,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.8495
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 174,
+          "model_type": "XGBOOST",
+          "mae": 792.4893,
+          "rmse": 982.3391,
+          "mape": 0.6662,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 339.5208,
+              "rmse": 439.6519,
+              "mape": 0.2838
+            },
+            "h_7": {
+              "mae": 555.2015,
+              "rmse": 639.9407,
+              "mape": 0.4642
+            },
+            "h_14": {
+              "mae": 814.6223,
+              "rmse": 943.7317,
+              "mape": 0.6833
+            },
+            "h_30": {
+              "mae": 979.7785,
+              "rmse": 1258.5477,
+              "mape": 0.8314
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -125.3707,
+            "p90_abs_pct_error": 1.4021,
+            "harvest_season_mape": 0.6563,
+            "off_harvest_season_mape": 0.6704,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6662
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_XGBOOST.pkl",
+          "is_selected": true
+        },
+        {
+          "model_run_id": 175,
+          "model_type": "LSTM",
+          "mae": 1224.1463,
+          "rmse": 1537.9695,
+          "mape": 1.0252,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 184.0077,
+              "rmse": 240.3677,
+              "mape": 0.1538
+            },
+            "h_7": {
+              "mae": 551.0292,
+              "rmse": 628.6912,
+              "mape": 0.4597
+            },
+            "h_14": {
+              "mae": 1159.3015,
+              "rmse": 1319.66,
+              "mape": 0.9669
+            },
+            "h_30": {
+              "mae": 2033.3092,
+              "rmse": 2317.2517,
+              "mape": 1.714
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 1150.5529,
+            "p90_abs_pct_error": 2.2464,
+            "harvest_season_mape": 0.6891,
+            "off_harvest_season_mape": 1.1692,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0252
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_GL_LSTM.pkl",
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "commodity_id": 1,
+      "commodity_code": "CAFE_ROBUSTA",
+      "commodity_name": "Cà phê nhân xô (Robusta)",
+      "province_id": 4,
+      "province_code": "DN",
+      "province_name": "Đắk Nông",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 182,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.4683,
+      "selected_rmse": 695.7711,
+      "selected_mae": 558.6763,
+      "models": [
+        {
+          "model_run_id": 176,
+          "model_type": "NAIVE",
+          "mae": 1192.0513,
+          "rmse": 1558.2288,
+          "mape": 1.0117,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 61.5385,
+              "rmse": 124.0347,
+              "mape": 0.0508
+            },
+            "h_7": {
+              "mae": 569.2308,
+              "rmse": 751.4089,
+              "mape": 0.4767
+            },
+            "h_14": {
+              "mae": 976.9231,
+              "rmse": 1209.2592,
+              "mape": 0.8265
+            },
+            "h_30": {
+              "mae": 2392.3077,
+              "rmse": 2651.4147,
+              "mape": 2.0465
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1091.5385,
+            "p90_abs_pct_error": 2.356,
+            "harvest_season_mape": 1.805,
+            "off_harvest_season_mape": 0.6718,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0117
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 177,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1686.6667,
+          "rmse": 2070.5877,
+          "mape": 1.4319,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 1023.0769,
+              "rmse": 1276.7145,
+              "mape": 0.8584
+            },
+            "h_7": {
+              "mae": 1153.8462,
+              "rmse": 1321.4211,
+              "mape": 0.969
+            },
+            "h_14": {
+              "mae": 976.9231,
+              "rmse": 1209.2592,
+              "mape": 0.8265
+            },
+            "h_30": {
+              "mae": 3223.0769,
+              "rmse": 3495.6016,
+              "mape": 2.7588
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1633.3333,
+            "p90_abs_pct_error": 3.0693,
+            "harvest_season_mape": 2.6252,
+            "off_harvest_season_mape": 0.9205,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.4319
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 178,
+          "model_type": "MOVING_AVG",
+          "mae": 1630.8782,
+          "rmse": 2023.3027,
+          "mape": 1.3856,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 614.8338,
+              "rmse": 773.8226,
+              "mape": 0.5156
+            },
+            "h_7": {
+              "mae": 984.0646,
+              "rmse": 1184.1016,
+              "mape": 0.827
+            },
+            "h_14": {
+              "mae": 1441.2077,
+              "rmse": 1747.2445,
+              "mape": 1.2211
+            },
+            "h_30": {
+              "mae": 2913.7354,
+              "rmse": 3148.2079,
+              "mape": 2.4933
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1612.9662,
+            "p90_abs_pct_error": 2.917,
+            "harvest_season_mape": 2.6306,
+            "off_harvest_season_mape": 0.8521,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.3856
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 179,
+          "model_type": "PROPHET",
+          "mae": 783.9985,
+          "rmse": 992.2044,
+          "mape": 0.6628,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 87.2408,
+              "rmse": 127.5817,
+              "mape": 0.0724
+            },
+            "h_7": {
+              "mae": 584.1192,
+              "rmse": 707.2246,
+              "mape": 0.4895
+            },
+            "h_14": {
+              "mae": 560.28,
+              "rmse": 717.4928,
+              "mape": 0.4716
+            },
+            "h_30": {
+              "mae": 1464.6785,
+              "rmse": 1620.8964,
+              "mape": 1.2502
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -548.0149,
+            "p90_abs_pct_error": 1.4208,
+            "harvest_season_mape": 0.8876,
+            "off_harvest_season_mape": 0.5665,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6628
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 180,
+          "model_type": "RANDOM_FOREST",
+          "mae": 820.3379,
+          "rmse": 1066.5282,
+          "mape": 0.687,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 282.2915,
+              "rmse": 340.9356,
+              "mape": 0.2351
+            },
+            "h_7": {
+              "mae": 703.6646,
+              "rmse": 863.948,
+              "mape": 0.5884
+            },
+            "h_14": {
+              "mae": 840.6838,
+              "rmse": 1025.6344,
+              "mape": 0.7041
+            },
+            "h_30": {
+              "mae": 935.8377,
+              "rmse": 1308.9451,
+              "mape": 0.7866
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -23.4443,
+            "p90_abs_pct_error": 1.3462,
+            "harvest_season_mape": 0.5006,
+            "off_harvest_season_mape": 0.7669,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.687
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 181,
+          "model_type": "XGBOOST",
+          "mae": 735.3595,
+          "rmse": 962.5474,
+          "mape": 0.6161,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 314.7946,
+              "rmse": 377.6298,
+              "mape": 0.2626
+            },
+            "h_7": {
+              "mae": 639.8231,
+              "rmse": 827.4101,
+              "mape": 0.5349
+            },
+            "h_14": {
+              "mae": 735.3992,
+              "rmse": 918.8231,
+              "mape": 0.6159
+            },
+            "h_30": {
+              "mae": 949.2392,
+              "rmse": 1231.8342,
+              "mape": 0.8001
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -0.6783,
+            "p90_abs_pct_error": 1.2207,
+            "harvest_season_mape": 0.445,
+            "off_harvest_season_mape": 0.6894,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6161
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 182,
+          "model_type": "LSTM",
+          "mae": 558.6763,
+          "rmse": 695.7711,
+          "mape": 0.4683,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 121.1554,
+              "rmse": 146.0947,
+              "mape": 0.1008
+            },
+            "h_7": {
+              "mae": 581.8985,
+              "rmse": 691.6795,
+              "mape": 0.4859
+            },
+            "h_14": {
+              "mae": 579.9092,
+              "rmse": 769.7097,
+              "mape": 0.4839
+            },
+            "h_30": {
+              "mae": 518.5946,
+              "rmse": 620.8438,
+              "mape": 0.4398
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 336.4942,
+            "p90_abs_pct_error": 0.974,
+            "harvest_season_mape": 0.3225,
+            "off_harvest_season_mape": 0.5308,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.4683
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\CAFE_ROBUSTA_DN_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    },
+    {
+      "commodity_id": 2,
+      "commodity_code": "TIEU_DEN",
+      "commodity_name": "Hồ tiêu đen",
+      "province_id": 2,
+      "province_code": "DL",
+      "province_name": "Đắk Lắk",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 189,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.6804,
+      "selected_rmse": 1301.641,
+      "selected_mae": 996.9458,
+      "models": [
+        {
+          "model_run_id": 183,
+          "model_type": "NAIVE",
+          "mae": 1100.5128,
+          "rmse": 1408.6728,
+          "mape": 0.7529,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 161.5385,
+              "rmse": 243.3737,
+              "mape": 0.1095
+            },
+            "h_7": {
+              "mae": 738.4615,
+              "rmse": 903.838,
+              "mape": 0.5035
+            },
+            "h_14": {
+              "mae": 1015.3846,
+              "rmse": 1427.747,
+              "mape": 0.6952
+            },
+            "h_30": {
+              "mae": 1930.7692,
+              "rmse": 2095.2327,
+              "mape": 1.323
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -762.5641,
+            "p90_abs_pct_error": 1.7206,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7529,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7529
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 184,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1467.1795,
+          "rmse": 1753.5459,
+          "mape": 1.0043,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 1153.8462,
+              "rmse": 1543.2234,
+              "mape": 0.7884
+            },
+            "h_7": {
+              "mae": 1146.1538,
+              "rmse": 1497.9473,
+              "mape": 0.7827
+            },
+            "h_14": {
+              "mae": 1015.3846,
+              "rmse": 1427.747,
+              "mape": 0.6952
+            },
+            "h_30": {
+              "mae": 2246.1538,
+              "rmse": 2505.9928,
+              "mape": 1.5404
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1141.5385,
+            "p90_abs_pct_error": 1.9113,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0043,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0043
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 185,
+          "model_type": "MOVING_AVG",
+          "mae": 1382.8573,
+          "rmse": 1623.5103,
+          "mape": 0.9468,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 758.7915,
+              "rmse": 918.5365,
+              "mape": 0.5174
+            },
+            "h_7": {
+              "mae": 944.5054,
+              "rmse": 1229.3902,
+              "mape": 0.6451
+            },
+            "h_14": {
+              "mae": 1390.6592,
+              "rmse": 1595.7614,
+              "mape": 0.9526
+            },
+            "h_30": {
+              "mae": 2040.11,
+              "rmse": 2272.2833,
+              "mape": 1.3985
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1114.7618,
+            "p90_abs_pct_error": 1.7263,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.9468,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9468
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 186,
+          "model_type": "PROPHET",
+          "mae": 1122.0826,
+          "rmse": 1373.6432,
+          "mape": 0.7677,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 163.8892,
+              "rmse": 232.9439,
+              "mape": 0.1111
+            },
+            "h_7": {
+              "mae": 820.18,
+              "rmse": 949.6094,
+              "mape": 0.5592
+            },
+            "h_14": {
+              "mae": 1086.7823,
+              "rmse": 1387.3052,
+              "mape": 0.7449
+            },
+            "h_30": {
+              "mae": 1891.0869,
+              "rmse": 2080.0675,
+              "mape": 1.2945
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -372.9632,
+            "p90_abs_pct_error": 1.5423,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7677,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7677
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 187,
+          "model_type": "RANDOM_FOREST",
+          "mae": 1085.2519,
+          "rmse": 1345.8523,
+          "mape": 0.7417,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 299.33,
+              "rmse": 368.0993,
+              "mape": 0.2034
+            },
+            "h_7": {
+              "mae": 766.8431,
+              "rmse": 858.7991,
+              "mape": 0.5227
+            },
+            "h_14": {
+              "mae": 1150.4377,
+              "rmse": 1363.2927,
+              "mape": 0.787
+            },
+            "h_30": {
+              "mae": 1703.4923,
+              "rmse": 1908.2616,
+              "mape": 1.1636
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -313.5261,
+            "p90_abs_pct_error": 1.5009,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7417,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7417
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 188,
+          "model_type": "XGBOOST",
+          "mae": 1064.6097,
+          "rmse": 1304.1932,
+          "mape": 0.728,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 301.1815,
+              "rmse": 402.9815,
+              "mape": 0.2048
+            },
+            "h_7": {
+              "mae": 738.4954,
+              "rmse": 831.8649,
+              "mape": 0.5038
+            },
+            "h_14": {
+              "mae": 1075.3623,
+              "rmse": 1286.2116,
+              "mape": 0.7369
+            },
+            "h_30": {
+              "mae": 1697.6162,
+              "rmse": 1918.0672,
+              "mape": 1.1597
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -192.3384,
+            "p90_abs_pct_error": 1.4106,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.728,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.728
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 189,
+          "model_type": "LSTM",
+          "mae": 996.9458,
+          "rmse": 1301.641,
+          "mape": 0.6804,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 166.13,
+              "rmse": 245.2462,
+              "mape": 0.1127
+            },
+            "h_7": {
+              "mae": 769.1608,
+              "rmse": 891.7997,
+              "mape": 0.5228
+            },
+            "h_14": {
+              "mae": 1010.6177,
+              "rmse": 1109.0594,
+              "mape": 0.6911
+            },
+            "h_30": {
+              "mae": 1615.1685,
+              "rmse": 2142.8131,
+              "mape": 1.1004
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 691.7367,
+            "p90_abs_pct_error": 1.4217,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.6804,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6804
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DL_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    },
+    {
+      "commodity_id": 2,
+      "commodity_code": "TIEU_DEN",
+      "commodity_name": "Hồ tiêu đen",
+      "province_id": 3,
+      "province_code": "GL",
+      "province_name": "Gia Lai",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 193,
+      "selected_model_type": "PROPHET",
+      "selected_mape": 0.7626,
+      "selected_rmse": 1344.9546,
+      "selected_mae": 1106.3285,
+      "models": [
+        {
+          "model_run_id": 190,
+          "model_type": "NAIVE",
+          "mae": 1198.4615,
+          "rmse": 1484.5529,
+          "mape": 0.8263,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 169.2308,
+              "rmse": 318.651,
+              "mape": 0.1159
+            },
+            "h_7": {
+              "mae": 807.6923,
+              "rmse": 953.1325,
+              "mape": 0.5547
+            },
+            "h_14": {
+              "mae": 1269.2308,
+              "rmse": 1518.3493,
+              "mape": 0.8756
+            },
+            "h_30": {
+              "mae": 1815.3846,
+              "rmse": 2023.3255,
+              "mape": 1.2537
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -923.5897,
+            "p90_abs_pct_error": 1.6695,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.8263,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.8263
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 191,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1542.8205,
+          "rmse": 1824.1612,
+          "mape": 1.0644,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 1138.4615,
+              "rmse": 1407.1247,
+              "mape": 0.7835
+            },
+            "h_7": {
+              "mae": 1092.3077,
+              "rmse": 1342.787,
+              "mape": 0.7517
+            },
+            "h_14": {
+              "mae": 1269.2308,
+              "rmse": 1518.3493,
+              "mape": 0.8756
+            },
+            "h_30": {
+              "mae": 2361.5385,
+              "rmse": 2633.3658,
+              "mape": 1.6328
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1391.0256,
+            "p90_abs_pct_error": 1.8815,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0644,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0644
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 192,
+          "model_type": "MOVING_AVG",
+          "mae": 1453.8463,
+          "rmse": 1718.5844,
+          "mape": 1.003,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 713.1877,
+              "rmse": 851.802,
+              "mape": 0.4896
+            },
+            "h_7": {
+              "mae": 970.3292,
+              "rmse": 1214.8646,
+              "mape": 0.6681
+            },
+            "h_14": {
+              "mae": 1460.44,
+              "rmse": 1714.4391,
+              "mape": 1.0077
+            },
+            "h_30": {
+              "mae": 2050.5492,
+              "rmse": 2254.4622,
+              "mape": 1.4168
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1362.0513,
+            "p90_abs_pct_error": 1.8029,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.003,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.003
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 193,
+          "model_type": "PROPHET",
+          "mae": 1106.3285,
+          "rmse": 1344.9546,
+          "mape": 0.7626,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 230.8615,
+              "rmse": 330.5888,
+              "mape": 0.1582
+            },
+            "h_7": {
+              "mae": 768.5662,
+              "rmse": 918.0105,
+              "mape": 0.5278
+            },
+            "h_14": {
+              "mae": 1199.3685,
+              "rmse": 1421.0031,
+              "mape": 0.8274
+            },
+            "h_30": {
+              "mae": 1638.7523,
+              "rmse": 1807.4866,
+              "mape": 1.1308
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -526.9727,
+            "p90_abs_pct_error": 1.3974,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7626,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7626
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_PROPHET.pkl",
+          "is_selected": true
+        },
+        {
+          "model_run_id": 194,
+          "model_type": "RANDOM_FOREST",
+          "mae": 1472.5281,
+          "rmse": 1873.847,
+          "mape": 1.0135,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 443.3077,
+              "rmse": 568.9892,
+              "mape": 0.305
+            },
+            "h_7": {
+              "mae": 1082.9185,
+              "rmse": 1271.0895,
+              "mape": 0.7439
+            },
+            "h_14": {
+              "mae": 1720.0115,
+              "rmse": 1964.3064,
+              "mape": 1.1841
+            },
+            "h_30": {
+              "mae": 1999.7631,
+              "rmse": 2358.797,
+              "mape": 1.3775
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -396.8196,
+            "p90_abs_pct_error": 2.1576,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0135,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0135
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 195,
+          "model_type": "XGBOOST",
+          "mae": 1487.7327,
+          "rmse": 1909.2577,
+          "mape": 1.0238,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 446.0969,
+              "rmse": 549.762,
+              "mape": 0.3061
+            },
+            "h_7": {
+              "mae": 1031.9192,
+              "rmse": 1204.1537,
+              "mape": 0.7089
+            },
+            "h_14": {
+              "mae": 1675.7815,
+              "rmse": 1947.8914,
+              "mape": 1.1535
+            },
+            "h_30": {
+              "mae": 2099.4369,
+              "rmse": 2467.1584,
+              "mape": 1.4464
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -532.1465,
+            "p90_abs_pct_error": 2.26,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0238,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0238
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 196,
+          "model_type": "LSTM",
+          "mae": 1420.5093,
+          "rmse": 1930.3075,
+          "mape": 0.9828,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 195.5231,
+              "rmse": 309.4764,
+              "mape": 0.1341
+            },
+            "h_7": {
+              "mae": 843.2008,
+              "rmse": 975.6055,
+              "mape": 0.5796
+            },
+            "h_14": {
+              "mae": 1488.7577,
+              "rmse": 1912.0273,
+              "mape": 1.0307
+            },
+            "h_30": {
+              "mae": 2252.1154,
+              "rmse": 2760.6991,
+              "mape": 1.5613
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1194.0399,
+            "p90_abs_pct_error": 2.4787,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.9828,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9828
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_GL_LSTM.pkl",
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "commodity_id": 2,
+      "commodity_code": "TIEU_DEN",
+      "commodity_name": "Hồ tiêu đen",
+      "province_id": 4,
+      "province_code": "DN",
+      "province_name": "Đắk Nông",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 203,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.36,
+      "selected_rmse": 845.4334,
+      "selected_mae": 525.3414,
+      "models": [
+        {
+          "model_run_id": 197,
+          "model_type": "NAIVE",
+          "mae": 1162.3077,
+          "rmse": 1402.0041,
+          "mape": 0.7976,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 276.9231,
+              "rmse": 380.2833,
+              "mape": 0.1888
+            },
+            "h_7": {
+              "mae": 669.2308,
+              "rmse": 788.8648,
+              "mape": 0.4587
+            },
+            "h_14": {
+              "mae": 1046.1538,
+              "rmse": 1128.6479,
+              "mape": 0.7166
+            },
+            "h_30": {
+              "mae": 2030.7692,
+              "rmse": 2170.0762,
+              "mape": 1.3952
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1076.1538,
+            "p90_abs_pct_error": 1.5703,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7976,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7976
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 198,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1522.3077,
+          "rmse": 1738.8989,
+          "mape": 1.0447,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 861.5385,
+              "rmse": 992.2779,
+              "mape": 0.5884
+            },
+            "h_7": {
+              "mae": 1069.2308,
+              "rmse": 1160.5702,
+              "mape": 0.7323
+            },
+            "h_14": {
+              "mae": 1046.1538,
+              "rmse": 1128.6479,
+              "mape": 0.7166
+            },
+            "h_30": {
+              "mae": 2476.9231,
+              "rmse": 2727.3543,
+              "mape": 1.7041
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1472.5641,
+            "p90_abs_pct_error": 1.8051,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0447,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0447
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 199,
+          "model_type": "MOVING_AVG",
+          "mae": 1505.0922,
+          "rmse": 1712.1435,
+          "mape": 1.0331,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 544.5062,
+              "rmse": 627.3259,
+              "mape": 0.3718
+            },
+            "h_7": {
+              "mae": 1044.5062,
+              "rmse": 1147.3904,
+              "mape": 0.7157
+            },
+            "h_14": {
+              "mae": 1421.4292,
+              "rmse": 1491.374,
+              "mape": 0.9742
+            },
+            "h_30": {
+              "mae": 2301.6492,
+              "rmse": 2459.7018,
+              "mape": 1.5825
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1451.4292,
+            "p90_abs_pct_error": 1.8238,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 1.0331,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.0331
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 200,
+          "model_type": "PROPHET",
+          "mae": 1018.8223,
+          "rmse": 1285.0904,
+          "mape": 0.6983,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 282.6408,
+              "rmse": 370.568,
+              "mape": 0.1926
+            },
+            "h_7": {
+              "mae": 593.7354,
+              "rmse": 678.6285,
+              "mape": 0.4067
+            },
+            "h_14": {
+              "mae": 807.8546,
+              "rmse": 958.8355,
+              "mape": 0.5521
+            },
+            "h_30": {
+              "mae": 1941.0008,
+              "rmse": 2124.3677,
+              "mape": 1.3313
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -711.2753,
+            "p90_abs_pct_error": 1.5387,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.6983,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6983
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 201,
+          "model_type": "RANDOM_FOREST",
+          "mae": 1106.135,
+          "rmse": 1514.8682,
+          "mape": 0.7567,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 248.3862,
+              "rmse": 308.6975,
+              "mape": 0.1686
+            },
+            "h_7": {
+              "mae": 517.3154,
+              "rmse": 737.6012,
+              "mape": 0.3526
+            },
+            "h_14": {
+              "mae": 920.5577,
+              "rmse": 1214.9258,
+              "mape": 0.6286
+            },
+            "h_30": {
+              "mae": 2412.3585,
+              "rmse": 2642.7243,
+              "mape": 1.653
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -573.608,
+            "p90_abs_pct_error": 1.8137,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7567,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7567
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 202,
+          "model_type": "XGBOOST",
+          "mae": 1128.5897,
+          "rmse": 1514.2214,
+          "mape": 0.7715,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 316.5969,
+              "rmse": 393.044,
+              "mape": 0.2149
+            },
+            "h_7": {
+              "mae": 618.65,
+              "rmse": 790.8752,
+              "mape": 0.4214
+            },
+            "h_14": {
+              "mae": 965.2415,
+              "rmse": 1224.953,
+              "mape": 0.6589
+            },
+            "h_30": {
+              "mae": 2246.9577,
+              "rmse": 2544.3355,
+              "mape": 1.5386
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -649.2092,
+            "p90_abs_pct_error": 1.7308,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7715,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7715
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 203,
+          "model_type": "LSTM",
+          "mae": 525.3414,
+          "rmse": 845.4334,
+          "mape": 0.36,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 262.6038,
+              "rmse": 359.3305,
+              "mape": 0.179
+            },
+            "h_7": {
+              "mae": 409.6269,
+              "rmse": 484.3115,
+              "mape": 0.281
+            },
+            "h_14": {
+              "mae": 311.8585,
+              "rmse": 358.2768,
+              "mape": 0.2132
+            },
+            "h_30": {
+              "mae": 1297.0715,
+              "rmse": 1864.2453,
+              "mape": 0.8884
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 67.7607,
+            "p90_abs_pct_error": 0.7752,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.36,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.36
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_DN_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    },
+    {
+      "commodity_id": 2,
+      "commodity_code": "TIEU_DEN",
+      "commodity_name": "Hồ tiêu đen",
+      "province_id": 5,
+      "province_code": "BRVT",
+      "province_name": "Bà Rịa - Vũng Tàu",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1295,
+      "selected_model_run_id": 210,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.6459,
+      "selected_rmse": 1213.9559,
+      "selected_mae": 948.4077,
+      "models": [
+        {
+          "model_run_id": 204,
+          "model_type": "NAIVE",
+          "mae": 1066.6667,
+          "rmse": 1448.943,
+          "mape": 0.7259,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 130.7692,
+              "rmse": 233.6993,
+              "mape": 0.0882
+            },
+            "h_7": {
+              "mae": 700.0,
+              "rmse": 980.9728,
+              "mape": 0.4755
+            },
+            "h_14": {
+              "mae": 1023.0769,
+              "rmse": 1358.4493,
+              "mape": 0.6963
+            },
+            "h_30": {
+              "mae": 1723.0769,
+              "rmse": 2134.6951,
+              "mape": 1.1753
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -864.1026,
+            "p90_abs_pct_error": 1.7752,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.7259,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.7259
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 205,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 1428.2051,
+          "rmse": 1837.2499,
+          "mape": 0.9723,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 984.6154,
+              "rmse": 1234.7532,
+              "mape": 0.6678
+            },
+            "h_7": {
+              "mae": 1007.6923,
+              "rmse": 1317.6319,
+              "mape": 0.6845
+            },
+            "h_14": {
+              "mae": 1023.0769,
+              "rmse": 1358.4493,
+              "mape": 0.6963
+            },
+            "h_30": {
+              "mae": 2376.9231,
+              "rmse": 2692.5824,
+              "mape": 1.622
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1295.3846,
+            "p90_abs_pct_error": 2.253,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.9723,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9723
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 206,
+          "model_type": "MOVING_AVG",
+          "mae": 1336.1179,
+          "rmse": 1739.259,
+          "mape": 0.9097,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 525.2754,
+              "rmse": 696.95,
+              "mape": 0.3562
+            },
+            "h_7": {
+              "mae": 914.2862,
+              "rmse": 1252.1732,
+              "mape": 0.6216
+            },
+            "h_14": {
+              "mae": 1308.7923,
+              "rmse": 1605.1848,
+              "mape": 0.8905
+            },
+            "h_30": {
+              "mae": 2008.7923,
+              "rmse": 2420.9309,
+              "mape": 1.3706
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -1272.8949,
+            "p90_abs_pct_error": 2.1058,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.9097,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9097
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 207,
+          "model_type": "PROPHET",
+          "mae": 972.2486,
+          "rmse": 1284.1475,
+          "mape": 0.6621,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 190.07,
+              "rmse": 253.8207,
+              "mape": 0.1283
+            },
+            "h_7": {
+              "mae": 671.8954,
+              "rmse": 939.4943,
+              "mape": 0.4566
+            },
+            "h_14": {
+              "mae": 949.45,
+              "rmse": 1238.0519,
+              "mape": 0.6469
+            },
+            "h_30": {
+              "mae": 1588.2462,
+              "rmse": 1841.1709,
+              "mape": 1.0837
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -414.3974,
+            "p90_abs_pct_error": 1.5147,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.6621,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6621
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 208,
+          "model_type": "RANDOM_FOREST",
+          "mae": 1378.7856,
+          "rmse": 1768.7386,
+          "mape": 0.9367,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 468.5992,
+              "rmse": 592.4972,
+              "mape": 0.3159
+            },
+            "h_7": {
+              "mae": 957.4746,
+              "rmse": 1303.055,
+              "mape": 0.649
+            },
+            "h_14": {
+              "mae": 1299.6162,
+              "rmse": 1684.4702,
+              "mape": 0.8823
+            },
+            "h_30": {
+              "mae": 2110.7046,
+              "rmse": 2507.7297,
+              "mape": 1.439
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -832.4822,
+            "p90_abs_pct_error": 2.1583,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.9367,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9367
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 209,
+          "model_type": "XGBOOST",
+          "mae": 1238.1847,
+          "rmse": 1595.5045,
+          "mape": 0.8423,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 341.0977,
+              "rmse": 445.6568,
+              "mape": 0.2314
+            },
+            "h_7": {
+              "mae": 800.8015,
+              "rmse": 1103.4334,
+              "mape": 0.5443
+            },
+            "h_14": {
+              "mae": 1082.6369,
+              "rmse": 1473.4277,
+              "mape": 0.7358
+            },
+            "h_30": {
+              "mae": 1988.6785,
+              "rmse": 2292.0186,
+              "mape": 1.356
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -600.7619,
+            "p90_abs_pct_error": 1.9449,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.8423,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.8423
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 210,
+          "model_type": "LSTM",
+          "mae": 948.4077,
+          "rmse": 1213.9559,
+          "mape": 0.6459,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 149.9454,
+              "rmse": 230.9154,
+              "mape": 0.1011
+            },
+            "h_7": {
+              "mae": 659.5485,
+              "rmse": 955.7016,
+              "mape": 0.448
+            },
+            "h_14": {
+              "mae": 982.7885,
+              "rmse": 1206.552,
+              "mape": 0.6686
+            },
+            "h_30": {
+              "mae": 1428.7585,
+              "rmse": 1648.8439,
+              "mape": 0.9756
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": -283.3946,
+            "p90_abs_pct_error": 1.4351,
+            "harvest_season_mape": 0.0,
+            "off_harvest_season_mape": 0.6459,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6459
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\TIEU_DEN_BRVT_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    },
+    {
+      "commodity_id": 3,
+      "commodity_code": "LUA_IR50404",
+      "commodity_name": "Lúa tươi IR50404",
+      "province_id": 6,
+      "province_code": "AG",
+      "province_name": "An Giang",
+      "train_start_date": "2023-01-02",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1295,
+      "selected_model_run_id": 216,
+      "selected_model_type": "XGBOOST",
+      "selected_mape": 0.5893,
+      "selected_rmse": 57.8086,
+      "selected_mae": 47.1659,
+      "models": [
+        {
+          "model_run_id": 211,
+          "model_type": "NAIVE",
+          "mae": 103.2051,
+          "rmse": 123.127,
+          "mape": 1.2844,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 23.0769,
+              "rmse": 33.9683,
+              "mape": 0.2912
+            },
+            "h_7": {
+              "mae": 42.3077,
+              "rmse": 60.4471,
+              "mape": 0.5272
+            },
+            "h_14": {
+              "mae": 96.1538,
+              "rmse": 104.6974,
+              "mape": 1.2007
+            },
+            "h_30": {
+              "mae": 188.4615,
+              "rmse": 195.6252,
+              "mape": 2.3307
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 95.5128,
+            "p90_abs_pct_error": 2.4691,
+            "harvest_season_mape": 1.1333,
+            "off_harvest_season_mape": 1.6368,
+            "high_volatility_mape": 2.3676,
+            "normal_volatility_mape": 1.25
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 212,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 143.9744,
+          "rmse": 164.6091,
+          "mape": 1.7946,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 96.1538,
+              "rmse": 111.8034,
+              "mape": 1.2193
+            },
+            "h_7": {
+              "mae": 80.7692,
+              "rmse": 99.0338,
+              "mape": 1.0123
+            },
+            "h_14": {
+              "mae": 96.1538,
+              "rmse": 104.6974,
+              "mape": 1.2007
+            },
+            "h_30": {
+              "mae": 269.2308,
+              "rmse": 272.4532,
+              "mape": 3.3342
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 143.2051,
+            "p90_abs_pct_error": 3.1056,
+            "harvest_season_mape": 1.6398,
+            "off_harvest_season_mape": 2.156,
+            "high_volatility_mape": 3.0878,
+            "normal_volatility_mape": 1.7536
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 213,
+          "model_type": "MOVING_AVG",
+          "mae": 141.0452,
+          "rmse": 156.8145,
+          "mape": 1.7574,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 53.0231,
+              "rmse": 61.2142,
+              "mape": 0.6702
+            },
+            "h_7": {
+              "mae": 79.9462,
+              "rmse": 89.933,
+              "mape": 1.0021
+            },
+            "h_14": {
+              "mae": 133.2431,
+              "rmse": 139.2091,
+              "mape": 1.6661
+            },
+            "h_30": {
+              "mae": 233.2431,
+              "rmse": 236.2374,
+              "mape": 2.8852
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 140.2944,
+            "p90_abs_pct_error": 2.9361,
+            "harvest_season_mape": 1.6005,
+            "off_harvest_season_mape": 2.1236,
+            "high_volatility_mape": 2.8966,
+            "normal_volatility_mape": 1.7213
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 214,
+          "model_type": "PROPHET",
+          "mae": 68.4511,
+          "rmse": 84.0597,
+          "mape": 0.8514,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 26.2146,
+              "rmse": 35.0769,
+              "mape": 0.331
+            },
+            "h_7": {
+              "mae": 44.3423,
+              "rmse": 51.6785,
+              "mape": 0.5557
+            },
+            "h_14": {
+              "mae": 59.6654,
+              "rmse": 70.4853,
+              "mape": 0.7434
+            },
+            "h_30": {
+              "mae": 112.2546,
+              "rmse": 127.4156,
+              "mape": 1.3861
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 49.597,
+            "p90_abs_pct_error": 1.7115,
+            "harvest_season_mape": 0.7672,
+            "off_harvest_season_mape": 1.0477,
+            "high_volatility_mape": 1.6284,
+            "normal_volatility_mape": 0.8267
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 215,
+          "model_type": "RANDOM_FOREST",
+          "mae": 47.9612,
+          "rmse": 58.6633,
+          "mape": 0.5987,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 35.2192,
+              "rmse": 44.3234,
+              "mape": 0.4462
+            },
+            "h_7": {
+              "mae": 40.0638,
+              "rmse": 51.478,
+              "mape": 0.5037
+            },
+            "h_14": {
+              "mae": 48.4446,
+              "rmse": 55.3231,
+              "mape": 0.6067
+            },
+            "h_30": {
+              "mae": 63.0592,
+              "rmse": 79.3385,
+              "mape": 0.7787
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 24.1237,
+            "p90_abs_pct_error": 1.2042,
+            "harvest_season_mape": 0.5857,
+            "off_harvest_season_mape": 0.6291,
+            "high_volatility_mape": 1.3098,
+            "normal_volatility_mape": 0.5761
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 216,
+          "model_type": "XGBOOST",
+          "mae": 47.1659,
+          "rmse": 57.8086,
+          "mape": 0.5893,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 34.3238,
+              "rmse": 48.0505,
+              "mape": 0.4347
+            },
+            "h_7": {
+              "mae": 36.9923,
+              "rmse": 48.5887,
+              "mape": 0.4662
+            },
+            "h_14": {
+              "mae": 45.0846,
+              "rmse": 53.5306,
+              "mape": 0.5655
+            },
+            "h_30": {
+              "mae": 60.1185,
+              "rmse": 74.899,
+              "mape": 0.7418
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 19.3897,
+            "p90_abs_pct_error": 1.2216,
+            "harvest_season_mape": 0.5916,
+            "off_harvest_season_mape": 0.584,
+            "high_volatility_mape": 1.1724,
+            "normal_volatility_mape": 0.5708
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_XGBOOST.pkl",
+          "is_selected": true
+        },
+        {
+          "model_run_id": 217,
+          "model_type": "LSTM",
+          "mae": 61.5106,
+          "rmse": 78.5016,
+          "mape": 0.7659,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 29.4262,
+              "rmse": 35.144,
+              "mape": 0.3727
+            },
+            "h_7": {
+              "mae": 35.8123,
+              "rmse": 49.6822,
+              "mape": 0.4499
+            },
+            "h_14": {
+              "mae": 48.4554,
+              "rmse": 56.7843,
+              "mape": 0.6046
+            },
+            "h_30": {
+              "mae": 117.7462,
+              "rmse": 131.5791,
+              "mape": 1.4573
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 45.305,
+            "p90_abs_pct_error": 1.6084,
+            "harvest_season_mape": 0.7369,
+            "off_harvest_season_mape": 0.8335,
+            "high_volatility_mape": 1.8503,
+            "normal_volatility_mape": 0.7315
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_AG_LSTM.pkl",
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "commodity_id": 3,
+      "commodity_code": "LUA_IR50404",
+      "commodity_name": "Lúa tươi IR50404",
+      "province_id": 7,
+      "province_code": "DT",
+      "province_name": "Đồng Tháp",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 224,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.5573,
+      "selected_rmse": 55.4877,
+      "selected_mae": 44.1479,
+      "models": [
+        {
+          "model_run_id": 218,
+          "model_type": "NAIVE",
+          "mae": 102.5641,
+          "rmse": 123.3091,
+          "mape": 1.2941,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 34.6154,
+              "rmse": 41.6025,
+              "mape": 0.4433
+            },
+            "h_7": {
+              "mae": 50.0,
+              "rmse": 66.5062,
+              "mape": 0.6378
+            },
+            "h_14": {
+              "mae": 92.3077,
+              "rmse": 103.7749,
+              "mape": 1.1688
+            },
+            "h_30": {
+              "mae": 192.3077,
+              "rmse": 198.0676,
+              "mape": 2.4066
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 98.9744,
+            "p90_abs_pct_error": 2.5,
+            "harvest_season_mape": 1.1656,
+            "off_harvest_season_mape": 1.5941,
+            "high_volatility_mape": 2.0964,
+            "normal_volatility_mape": 1.2687
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 219,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 141.6667,
+          "rmse": 160.8272,
+          "mape": 1.7874,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 103.8462,
+              "rmse": 115.1921,
+              "mape": 1.3257
+            },
+            "h_7": {
+              "mae": 96.1538,
+              "rmse": 106.5183,
+              "mape": 1.2246
+            },
+            "h_14": {
+              "mae": 92.3077,
+              "rmse": 103.7749,
+              "mape": 1.1688
+            },
+            "h_30": {
+              "mae": 265.3846,
+              "rmse": 269.2582,
+              "mape": 3.3208
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 140.8974,
+            "p90_abs_pct_error": 3.125,
+            "harvest_season_mape": 1.5864,
+            "off_harvest_season_mape": 2.2565,
+            "high_volatility_mape": 2.4633,
+            "normal_volatility_mape": 1.766
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 220,
+          "model_type": "MOVING_AVG",
+          "mae": 139.1387,
+          "rmse": 154.6118,
+          "mape": 1.7549,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 64.01,
+              "rmse": 70.8277,
+              "mape": 0.8175
+            },
+            "h_7": {
+              "mae": 82.6915,
+              "rmse": 90.5723,
+              "mape": 1.0523
+            },
+            "h_14": {
+              "mae": 131.5931,
+              "rmse": 139.0314,
+              "mape": 1.6646
+            },
+            "h_30": {
+              "mae": 231.5931,
+              "rmse": 234.2044,
+              "mape": 2.8968
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 138.2597,
+            "p90_abs_pct_error": 2.8545,
+            "harvest_season_mape": 1.5364,
+            "off_harvest_season_mape": 2.265,
+            "high_volatility_mape": 2.5045,
+            "normal_volatility_mape": 1.7311
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 221,
+          "model_type": "PROPHET",
+          "mae": 70.0782,
+          "rmse": 87.2717,
+          "mape": 0.8861,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 35.4931,
+              "rmse": 41.4345,
+              "mape": 0.4544
+            },
+            "h_7": {
+              "mae": 45.4762,
+              "rmse": 56.0355,
+              "mape": 0.5807
+            },
+            "h_14": {
+              "mae": 61.3562,
+              "rmse": 73.1358,
+              "mape": 0.7779
+            },
+            "h_30": {
+              "mae": 123.7692,
+              "rmse": 136.0081,
+              "mape": 1.5501
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 58.7448,
+            "p90_abs_pct_error": 1.7348,
+            "harvest_season_mape": 0.9058,
+            "off_harvest_season_mape": 0.8402,
+            "high_volatility_mape": 1.8051,
+            "normal_volatility_mape": 0.8569
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 222,
+          "model_type": "RANDOM_FOREST",
+          "mae": 49.8873,
+          "rmse": 63.0082,
+          "mape": 0.6303,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 27.7046,
+              "rmse": 35.3263,
+              "mape": 0.3531
+            },
+            "h_7": {
+              "mae": 35.3715,
+              "rmse": 45.8765,
+              "mape": 0.4505
+            },
+            "h_14": {
+              "mae": 41.3485,
+              "rmse": 53.3486,
+              "mape": 0.5227
+            },
+            "h_30": {
+              "mae": 84.7538,
+              "rmse": 94.2559,
+              "mape": 1.0606
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 34.1188,
+            "p90_abs_pct_error": 1.3003,
+            "harvest_season_mape": 0.6158,
+            "off_harvest_season_mape": 0.6642,
+            "high_volatility_mape": 1.5838,
+            "normal_volatility_mape": 0.6001
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 223,
+          "model_type": "XGBOOST",
+          "mae": 56.3861,
+          "rmse": 72.1119,
+          "mape": 0.7115,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 30.1392,
+              "rmse": 38.9072,
+              "mape": 0.3837
+            },
+            "h_7": {
+              "mae": 38.7531,
+              "rmse": 48.7069,
+              "mape": 0.4935
+            },
+            "h_14": {
+              "mae": 48.9592,
+              "rmse": 64.3731,
+              "mape": 0.6179
+            },
+            "h_30": {
+              "mae": 96.1046,
+              "rmse": 108.5603,
+              "mape": 1.2015
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 41.0842,
+            "p90_abs_pct_error": 1.5509,
+            "harvest_season_mape": 0.6839,
+            "off_harvest_season_mape": 0.7761,
+            "high_volatility_mape": 1.9027,
+            "normal_volatility_mape": 0.6737
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 224,
+          "model_type": "LSTM",
+          "mae": 44.1479,
+          "rmse": 55.4877,
+          "mape": 0.5573,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 29.2554,
+              "rmse": 35.6334,
+              "mape": 0.3737
+            },
+            "h_7": {
+              "mae": 34.2977,
+              "rmse": 50.4633,
+              "mape": 0.4363
+            },
+            "h_14": {
+              "mae": 41.6192,
+              "rmse": 53.584,
+              "mape": 0.5254
+            },
+            "h_30": {
+              "mae": 53.9346,
+              "rmse": 64.2982,
+              "mape": 0.6707
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 21.779,
+            "p90_abs_pct_error": 1.1885,
+            "harvest_season_mape": 0.483,
+            "off_harvest_season_mape": 0.7308,
+            "high_volatility_mape": 0.9939,
+            "normal_volatility_mape": 0.5434
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_DT_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    },
+    {
+      "commodity_id": 3,
+      "commodity_code": "LUA_IR50404",
+      "commodity_name": "Lúa tươi IR50404",
+      "province_id": 8,
+      "province_code": "CT",
+      "province_name": "Cần Thơ",
+      "train_start_date": "2023-01-01",
+      "train_end_date": "2026-08-03",
+      "test_start_date": "2026-08-04",
+      "test_end_date": "2026-11-01",
+      "train_record_count": 1296,
+      "selected_model_run_id": 231,
+      "selected_model_type": "LSTM",
+      "selected_mape": 0.5187,
+      "selected_rmse": 49.5426,
+      "selected_mae": 41.3072,
+      "models": [
+        {
+          "model_run_id": 225,
+          "model_type": "NAIVE",
+          "mae": 104.8718,
+          "rmse": 126.4404,
+          "mape": 1.316,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 19.2308,
+              "rmse": 31.0087,
+              "mape": 0.2432
+            },
+            "h_7": {
+              "mae": 42.3077,
+              "rmse": 63.5489,
+              "mape": 0.539
+            },
+            "h_14": {
+              "mae": 88.4615,
+              "rmse": 106.5183,
+              "mape": 1.116
+            },
+            "h_30": {
+              "mae": 196.1538,
+              "rmse": 199.5187,
+              "mape": 2.4402
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 99.7436,
+            "p90_abs_pct_error": 2.5333,
+            "harvest_season_mape": 1.3362,
+            "off_harvest_season_mape": 1.269,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.316
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 226,
+          "model_type": "SEASONAL_NAIVE",
+          "mae": 147.9487,
+          "rmse": 166.333,
+          "mape": 1.8555,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 88.4615,
+              "rmse": 102.8442,
+              "mape": 1.1179
+            },
+            "h_7": {
+              "mae": 88.4615,
+              "rmse": 99.0338,
+              "mape": 1.1225
+            },
+            "h_14": {
+              "mae": 88.4615,
+              "rmse": 106.5183,
+              "mape": 1.116
+            },
+            "h_30": {
+              "mae": 280.7692,
+              "rmse": 287.8969,
+              "mape": 3.4875
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 147.9487,
+            "p90_abs_pct_error": 3.1646,
+            "harvest_season_mape": 1.8383,
+            "off_harvest_season_mape": 1.8955,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.8555
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_SEASONAL_NAIVE.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 227,
+          "model_type": "MOVING_AVG",
+          "mae": 145.8252,
+          "rmse": 161.1675,
+          "mape": 1.8285,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 52.1992,
+              "rmse": 64.4396,
+              "mape": 0.6596
+            },
+            "h_7": {
+              "mae": 87.9131,
+              "rmse": 96.0985,
+              "mape": 1.1147
+            },
+            "h_14": {
+              "mae": 134.0669,
+              "rmse": 139.3819,
+              "mape": 1.6894
+            },
+            "h_30": {
+              "mae": 241.7592,
+              "rmse": 244.3966,
+              "mape": 3.0044
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 145.349,
+            "p90_abs_pct_error": 2.8662,
+            "harvest_season_mape": 1.7944,
+            "off_harvest_season_mape": 1.9081,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 1.8285
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_MOVING_AVG.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 228,
+          "model_type": "PROPHET",
+          "mae": 72.3477,
+          "rmse": 89.0345,
+          "mape": 0.9097,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 22.9685,
+              "rmse": 30.6821,
+              "mape": 0.2911
+            },
+            "h_7": {
+              "mae": 44.6777,
+              "rmse": 52.4954,
+              "mape": 0.5671
+            },
+            "h_14": {
+              "mae": 62.0877,
+              "rmse": 80.1113,
+              "mape": 0.7822
+            },
+            "h_30": {
+              "mae": 122.9785,
+              "rmse": 130.8994,
+              "mape": 1.5323
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 55.559,
+            "p90_abs_pct_error": 1.8755,
+            "harvest_season_mape": 0.9899,
+            "off_harvest_season_mape": 0.7226,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.9097
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_PROPHET.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 229,
+          "model_type": "RANDOM_FOREST",
+          "mae": 54.6316,
+          "rmse": 66.1924,
+          "mape": 0.6858,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 21.3462,
+              "rmse": 27.9619,
+              "mape": 0.2711
+            },
+            "h_7": {
+              "mae": 31.3669,
+              "rmse": 43.3758,
+              "mape": 0.3986
+            },
+            "h_14": {
+              "mae": 46.1662,
+              "rmse": 60.2817,
+              "mape": 0.5808
+            },
+            "h_30": {
+              "mae": 90.4054,
+              "rmse": 98.686,
+              "mape": 1.1222
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 44.8727,
+            "p90_abs_pct_error": 1.3516,
+            "harvest_season_mape": 0.7173,
+            "off_harvest_season_mape": 0.6123,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6858
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_RANDOM_FOREST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 230,
+          "model_type": "XGBOOST",
+          "mae": 52.0828,
+          "rmse": 62.8476,
+          "mape": 0.6545,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 25.5292,
+              "rmse": 31.4859,
+              "mape": 0.3249
+            },
+            "h_7": {
+              "mae": 26.3477,
+              "rmse": 38.286,
+              "mape": 0.3353
+            },
+            "h_14": {
+              "mae": 46.4262,
+              "rmse": 58.904,
+              "mape": 0.5849
+            },
+            "h_30": {
+              "mae": 90.1177,
+              "rmse": 96.0678,
+              "mape": 1.1208
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 40.6036,
+            "p90_abs_pct_error": 1.2963,
+            "harvest_season_mape": 0.701,
+            "off_harvest_season_mape": 0.5458,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.6545
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_XGBOOST.pkl",
+          "is_selected": false
+        },
+        {
+          "model_run_id": 231,
+          "model_type": "LSTM",
+          "mae": 41.3072,
+          "rmse": 49.5426,
+          "mape": 0.5187,
+          "horizon_metrics": {
+            "h_1": {
+              "mae": 22.3969,
+              "rmse": 30.1935,
+              "mape": 0.2835
+            },
+            "h_7": {
+              "mae": 29.45,
+              "rmse": 37.6391,
+              "mape": 0.3748
+            },
+            "h_14": {
+              "mae": 38.64,
+              "rmse": 47.1438,
+              "mape": 0.4861
+            },
+            "h_30": {
+              "mae": 54.2777,
+              "rmse": 58.8781,
+              "mape": 0.6722
+            }
+          },
+          "residual_analysis": {
+            "total_evaluated_points": 390,
+            "mean_bias": 25.1176,
+            "p90_abs_pct_error": 0.9772,
+            "harvest_season_mape": 0.5097,
+            "off_harvest_season_mape": 0.5397,
+            "high_volatility_mape": 0.0,
+            "normal_volatility_mape": 0.5187
+          },
+          "artifact_path": "D:\\agri-price-forecast\\models\\artifacts\\LUA_IR50404_CT_LSTM.pkl",
+          "is_selected": true
+        }
+      ]
+    }
+  ],
+  "backtesting_summary": [
+    {
+      "commodity_id": 1,
+      "province_id": 1,
+      "model_run_id": 160,
+      "model_type": "XGBOOST",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 790.671,
+      "backtest_rmse": 874.9057,
+      "backtest_mape": 0.687,
+      "commodity_code": "CAFE_ROBUSTA",
+      "province_code": "LD",
+      "province_name": "Lâm Đồng"
+    },
+    {
+      "commodity_id": 1,
+      "province_id": 2,
+      "model_run_id": 167,
+      "model_type": "XGBOOST",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 651.7657,
+      "backtest_rmse": 764.3067,
+      "backtest_mape": 0.5594,
+      "commodity_code": "CAFE_ROBUSTA",
+      "province_code": "DL",
+      "province_name": "Đắk Lắk"
+    },
+    {
+      "commodity_id": 1,
+      "province_id": 3,
+      "model_run_id": 174,
+      "model_type": "XGBOOST",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 755.4203,
+      "backtest_rmse": 1144.0961,
+      "backtest_mape": 0.6561,
+      "commodity_code": "CAFE_ROBUSTA",
+      "province_code": "GL",
+      "province_name": "Gia Lai"
+    },
+    {
+      "commodity_id": 1,
+      "province_id": 4,
+      "model_run_id": 182,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 298.5533,
+      "backtest_rmse": 392.2837,
+      "backtest_mape": 0.2565,
+      "commodity_code": "CAFE_ROBUSTA",
+      "province_code": "DN",
+      "province_name": "Đắk Nông"
+    },
+    {
+      "commodity_id": 2,
+      "province_id": 2,
+      "model_run_id": 189,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 1578.404,
+      "backtest_rmse": 2059.391,
+      "backtest_mape": 1.0755,
+      "commodity_code": "TIEU_DEN",
+      "province_code": "DL",
+      "province_name": "Đắk Lắk"
+    },
+    {
+      "commodity_id": 2,
+      "province_id": 3,
+      "model_run_id": 193,
+      "model_type": "PROPHET",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 1220.0753,
+      "backtest_rmse": 1381.1893,
+      "backtest_mape": 0.8437,
+      "commodity_code": "TIEU_DEN",
+      "province_code": "GL",
+      "province_name": "Gia Lai"
+    },
+    {
+      "commodity_id": 2,
+      "province_id": 4,
+      "model_run_id": 203,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 1728.2557,
+      "backtest_rmse": 2250.4555,
+      "backtest_mape": 1.1852,
+      "commodity_code": "TIEU_DEN",
+      "province_code": "DN",
+      "province_name": "Đắk Nông"
+    },
+    {
+      "commodity_id": 2,
+      "province_id": 5,
+      "model_run_id": 210,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 1968.3023,
+      "backtest_rmse": 2225.1635,
+      "backtest_mape": 1.3429,
+      "commodity_code": "TIEU_DEN",
+      "province_code": "BRVT",
+      "province_name": "Bà Rịa - Vũng Tàu"
+    },
+    {
+      "commodity_id": 3,
+      "province_id": 6,
+      "model_run_id": 216,
+      "model_type": "XGBOOST",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 42.4683,
+      "backtest_rmse": 51.1185,
+      "backtest_mape": 0.5165,
+      "commodity_code": "LUA_IR50404",
+      "province_code": "AG",
+      "province_name": "An Giang"
+    },
+    {
+      "commodity_id": 3,
+      "province_id": 7,
+      "model_run_id": 224,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 39.0203,
+      "backtest_rmse": 47.7564,
+      "backtest_mape": 0.4806,
+      "commodity_code": "LUA_IR50404",
+      "province_code": "DT",
+      "province_name": "Đồng Tháp"
+    },
+    {
+      "commodity_id": 3,
+      "province_id": 8,
+      "model_run_id": 231,
+      "model_type": "LSTM",
+      "backtest_origin_date": "2026-10-02",
+      "backtest_end_date": "2026-11-01",
+      "backtest_records_saved": 30,
+      "backtest_mae": 24.156,
+      "backtest_rmse": 29.2033,
+      "backtest_mape": 0.2976,
+      "commodity_code": "LUA_IR50404",
+      "province_code": "CT",
+      "province_name": "Cần Thơ"
+    }
+  ]
+}

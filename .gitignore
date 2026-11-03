@@ -61,14 +61,14 @@ Thumbs.db
 data/
 timescaledb_data/
 
-# Model artifacts
+# Model artifacts (Giữ lại các artifact mô hình đã huấn luyện trong models/artifacts/ để clone về là chạy được ngay)
 models_saved/
-artifacts/
-*.pkl
 *.joblib
 *.pt
 *.pth
 *.onnx
+!models/artifacts/
+!models/artifacts/*.pkl
 
 # Prefect
 .prefect/
@@ -79,6 +79,6 @@ logs/
 
 # Frontend build & dependencies
 ui/node_modules/
-ui/dist/
+!ui/dist/
 
 

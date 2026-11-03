@@ -1,0 +1,94 @@
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    container_name: agri_timescaledb
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-agri_price_db}
+      TZ: ${TIMEZONE:-Asia/Ho_Chi_Minh}
+      PGTZ: ${TIMEZONE:-Asia/Ho_Chi_Minh}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-agri_price_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: agri_fastapi_backend
+    restart: unless-stopped
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-agri_price_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@timescaledb:5432/${POSTGRES_DB:-agri_price_db}
+      TIMEZONE: ${TIMEZONE:-Asia/Ho_Chi_Minh}
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-your_email@example.com}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-your_app_password}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL:-alerts@agri-forecast.vn}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models/artifacts:/app/models/artifacts
+      - ./logs:/app/logs
+      - ./docs:/app/docs
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: agri_react_dashboard
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000/api
+      VITE_BACKEND_PROXY: http://api:8000
+    ports:
+      - "5173:5173"
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: agri_pipeline_scheduler
+    command: python scripts/scheduler.py --daemon --interval-hours 24
+    restart: unless-stopped
+    depends_on:
+      timescaledb:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-agri_price_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@timescaledb:5432/${POSTGRES_DB:-agri_price_db}
+      TIMEZONE: ${TIMEZONE:-Asia/Ho_Chi_Minh}
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-your_email@example.com}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-your_app_password}
+      SMTP_FROM_EMAIL: ${SMTP_FROM_EMAIL:-alerts@agri-forecast.vn}
+    volumes:
+      - ./data:/app/data
+      - ./models/artifacts:/app/models/artifacts
+      - ./logs:/app/logs
+      - ./docs:/app/docs
+
+volumes:
+  timescaledb_data:
+    driver: local
