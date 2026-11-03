@@ -1,0 +1,84 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+.hypothesis/
+
+# Environment variables
+.env
+!.env.example
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Database / Storage
+*.sqlite3
+*.db
+data/
+timescaledb_data/
+
+# Model artifacts
+models_saved/
+artifacts/
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+
+# Prefect
+.prefect/
+
+# Logs
+*.log
+logs/
+
+# Frontend build & dependencies
+ui/node_modules/
+ui/dist/
+
+

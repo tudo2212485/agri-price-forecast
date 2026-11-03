@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   1. Bảng màu Biến CSS & Chuẩn Tiếp cận WCAG AA (>= 4.5:1) (SRS v1.1 - Mục 5.4, NFR-12)
+   ========================================================================== */
+:root {
+  --base-font-size: 18px;
+  --color-bg-warm: #FAF6EE;
+  --color-surface: #FFFFFF;
+  --color-surface-selected: #ECFDF5;
+  --color-text-primary: #14171A;
+  --color-text-secondary: #334155;
+  --color-primary-green: #14532D;
+  --color-primary-green-hover: #0F3F22;
+  --color-primary-green-border: #166534;
+  --color-accent-orange: #C2410C;
+  --color-accent-orange-hover: #9A3412;
+
+  /* 3 Màu ngữ nghĩa kèm ký hiệu: Tăng (xanh lá + ▲), Giảm (đỏ + ▼), Ổn định (xám + ■) */
+  --color-trend-up: #14532D;
+  --color-trend-up-bg: #DCFCE7;
+  --color-trend-up-border: #15803D;
+
+  --color-trend-down: #991B1B;
+  --color-trend-down-bg: #FEE2E2;
+  --color-trend-down-border: #B91C1C;
+
+  --color-trend-stable: #1F2937;
+  --color-trend-stable-bg: #F3F4F6;
+  --color-trend-stable-border: #4B5563;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-bg-warm);
+  color: var(--color-text-primary);
+  line-height: 1.56;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. Ba mức cỡ chữ hỗ trợ người lớn tuổi: Thường (18px), Lớn (22px, nâng từ 20px), Rất lớn (26px)
+   ========================================================================== */
+.font-scale-normal {
+  --base-font-size: 18px;
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.font-scale-large {
+  --base-font-size: 22px;
+  font-size: 22px;
+  line-height: 1.58;
+}
+
+.font-scale-xlarge {
+  --base-font-size: 26px;
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+/* Mọi nút bấm tương tác chính đảm bảo vùng chạm tối thiểu >= 48px, bo góc 12px */
+.touch-target-btn {
+  min-height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+}
+
+/* Vòng focus 3px rõ ràng khi dùng bàn phím */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-accent-orange);
+  outline-offset: 2px;
+}
+
+/* Trạng thái nút/thẻ đang được chọn: Viền đậm 3px + đổi màu nền rõ ràng */
+.elderly-card-selected {
+  border-width: 3px !important;
+  border-color: var(--color-primary-green) !important;
+  background-color: var(--color-surface-selected) !important;
+}
+
+/* Tôn trọng prefers-reduced-motion: reduce (bỏ hiệu ứng chuyển động thừa) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   3. Native <dialog> Backdrop & Light-Dismiss Styling (light-dismiss-a-dialog)
+   ========================================================================== */
+dialog::backdrop {
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+/* ==========================================================================
+   4. Responsive Sticky Data Table & Container Query (responsive-table)
+   ========================================================================== */
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  max-block-size: min(560px, 80vh);
+  container-type: inline-size;
+}
+
+.table-wrapper table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-wrapper thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+}
+
+.table-wrapper tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: #ffffff;
+}
+
+@container (width < 600px) {
+  .table-wrapper table.responsive-stack,
+  .table-wrapper table.responsive-stack thead,
+  .table-wrapper table.responsive-stack tbody,
+  .table-wrapper table.responsive-stack tr,
+  .table-wrapper table.responsive-stack th,
+  .table-wrapper table.responsive-stack td {
+    display: block;
+  }
+
+  .table-wrapper table.responsive-stack thead {
+    display: none;
+  }
+
+  .table-wrapper table.responsive-stack tr {
+    margin-block-end: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  .table-wrapper table.responsive-stack tbody th {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+    background: #f1f5f9;
+  }
+}
+
+/* ==========================================================================
+   5. Deferred Form Validation Styling (:user-invalid / :user-valid)
+   ========================================================================== */
+.form-hint {
+  display: block;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.error-msg {
+  display: none;
+  color: #991B1B;
+  font-weight: 700;
+  margin-top: 0.35rem;
+}
+
+input.deferred-validate:user-invalid,
+input.deferred-validate.user-invalid-fallback {
+  border-color: #B91C1C;
+  background-color: #FEF2F2;
+}
+
+input.deferred-validate:user-invalid + .error-msg,
+input.deferred-validate.user-invalid-fallback + .error-msg {
+  display: block;
+}
+
+input.deferred-validate:user-valid,
+input.deferred-validate.user-valid-fallback {
+  border-color: #15803D;
+}
